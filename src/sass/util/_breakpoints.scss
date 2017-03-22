@@ -1,0 +1,65 @@
+/*
+Below are standard media breakpoints. Always use mobile-first media queries,
+as you should be designing mobile-first. If a mobile-first approach can not
+be used for whatever reason, max-width queries are also listed below.
+
+example (usage): @include for-desktop-up { background-color: red; }
+
+------------------------------------------
+|               Breakpoints              |
+------------------------------------------
+*/
+$mobile-lower-boundary: 320px;
+$tablet-portrait-lower-boundary: 480px;
+$tablet-landscape-lower-boundary: 768px;
+$desktop-lower-boundary: 1024px;
+$desktop-large-lower-boundary: 1280px;
+
+// Alternative breakpoints
+// $mobile-lower-boundary: 300px;
+// $tablet-portrait-lower-boundary: 600px;
+// $tablet-landscape-lower-boundary: 900px;
+// $desktop-lower-boundary: 1200px;
+// $desktop-large-lower-boundary: 1800px;
+
+/*
+---------------------------------------------------------
+|               Mobile-first Media Queries              |
+---------------------------------------------------------
+*/
+@mixin for-mobile-small-only {
+  @media only screen and (max-width: #{$mobile-lower-boundary - 1}) { @content; }
+}
+@mixin for-mobile-up {
+  @media only screen and (min-width: $mobile-lower-boundary) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media only screen and (min-width: $tablet-portrait-lower-boundary) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media only screen and (min-width: $tablet-landscape-lower-boundary) { @content; }
+}
+@mixin for-desktop-up {
+  @media only screen and (min-width: $desktop-lower-boundary) { @content; }
+}
+@mixin for-desktop-large-up {
+  @media only screen and (min-width: $desktop-large-lower-boundary) { @content; }
+}
+
+/*
+-------------------------------------------------------------------------
+|               Max-width Media Queries (Non-mobile First)              |
+-------------------------------------------------------------------------
+*/
+@mixin for-mobile-only {
+  @media only screen and (min-width: $mobile-lower-boundary) and (max-width: #{$tablet-portrait-lower-boundary - 1}) { @content; }
+}
+@mixin for-tablet-portrait-only {
+  @media only screen and (min-width: $tablet-portrait-lower-boundary) and (max-width: #{$tablet-landscape-lower-boundary - 1}) { @content; }
+}
+@mixin for-tablet-landscape-only {
+  @media only screen and (min-width: $tablet-landscape-lower-boundary) and (max-width: #{$desktop-lower-boundary - 1}) { @content; }
+}
+@mixin for-desktop-only {
+  @media only screen and (min-width: $desktop-lower-boundary) and (max-width: #{$desktop-large-lower-boundary - 1}) { @content; }
+}

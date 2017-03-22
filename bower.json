@@ -1,0 +1,15 @@
+{
+  "name": "nicks-websites",
+  "version": "1.0.0",
+  "homepage": "https://www.nickproz.com",
+  "authors": [
+    "nickproz <nick.prozorovsky@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "hover": "Hover#^2.1.0",
+    "fullpage.js": "fullpage#^2.9.2",
+    "font-awesome": "fontawesome#^4.7.0",
+    "semantic": "semantic-ui#^2.2.9"
+  }
+}
